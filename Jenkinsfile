@@ -1,15 +1,14 @@
 pipeline {
     agent any
-
     stages {
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                sh 'npm test'
+                sh 'npx jest'
             }
         }
     }
